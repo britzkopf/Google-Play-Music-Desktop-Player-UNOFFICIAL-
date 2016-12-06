@@ -31,6 +31,7 @@ cache:
   - '%USERPROFILE%\.electron'
 
 install:
+  - ps: $env:Path = ""
   - ps: Install-Product node $env:nodejs_version
   - npm i -g npm
   - if exist "node_modules" rd /S /Q "node_modules"
